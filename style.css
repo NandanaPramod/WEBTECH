@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root{
 --c1:#9fb3a8;
 --c2:#6f8f8b;
@@ -127,4 +128,185 @@ background:var(--c5);
 text-align:center;
 padding:30px;
 margin-top:60px;
+=======
+/* style.css */
+:root {
+    /* Your Color Palette */
+    --bg-dark: #142018;       /* Near Black - Main Background */
+    --bg-card: #1f3d34;       /* Dark Forest - Card Backgrounds */
+    --text-main: #9fb3a8;     /* Light Sage - Main Text */
+    --text-secondary: #6f8f8b; /* Medium Sage - Secondary Text */
+    --accent: #0f2e28;        /* Very Dark - Buttons/Links */
+    
+    --border-color: #6f8f8b;
+    --card-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-top: 80px; /* Space for fixed header */
+}
+
+/* --- Sticky Header --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 32, 24, 0.95); /* Uses your darkest color */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+nav a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--text-main);
+}
+
+/* --- Hero Section --- */
+.hero {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    color: var(--text-main);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+}
+
+/* --- Project Sections --- */
+.project-section {
+    max-width: 1000px;
+    margin: 0 auto 6rem auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+/* --- The Grid (2 Columns) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Columns */
+    gap: 3rem;
+}
+
+/* Responsive: 1 column on mobile */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- Project Card (The Sphere Look) --- */
+.project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow);
+    border-color: var(--text-main);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #0f2e28;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-info {
+    padding: 1.5rem;
+}
+
+.card-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.card-info p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 4rem 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+>>>>>>> ada82c447057e85d7c72724a16713fa626962099
 }
