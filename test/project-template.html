@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for the project detail page */
+        .project-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .back-link:hover {
+            color: var(--text-main);
+        }
+        .project-image {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+        .tags {
+            margin-bottom: 2rem;
+        }
+        .tag {
+            background: var(--bg-card);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">MyPortfolio.</a>
+        <nav>
+            <a href="index.html">Back to Home</a>
+        </nav>
+    </header>
+
+    <div class="project-container">
+        <a href="index.html" class="back-link">← Back to Projects</a>
+
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-main);">Project Title</h1>
+        
+        <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Flexbox</span>
+        </div>
+
+        <img src="https://via.placeholder.com/800x500?text=Project+Screenshot" alt="Project Screenshot" class="project-image">
+
+        <div style="line-height: 1.8; color: var(--text-secondary);">
+            <p><strong>Description:</strong> This is where you write about what you built. Explain the problem you solved and the techniques you used.</p>
+            <br>
+            <p><strong>Key Features:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Responsive design</li>
+                <li>Clean code structure</li>
+                <li>Modern CSS layout</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
