@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+
+<body class="fade">
+
+<section class="hero">
+
+<div class="hero-text">
+<h1>Hire Better Talent</h1>
+<p>Find trusted freelancers for design, development and more.</p>
+<button onclick="alert('Start Hiring')">Get Started</button>
+</div>
+
+<div class="hero-visual">
+<div class="circle"></div>
+</div>
+
+</section>
+
+<!-- CARDS -->
+<section class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb">
+<div>
+<h3>UI/UX Design</h3>
+<p>Modern clean interfaces</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f">
+<div>
+<h3>Web Development</h3>
+<p>Fast scalable apps</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a">
+<div>
+<h3>Content Writing</h3>
+<p>SEO & marketing content</p>
+</div>
+</div>
+
+</section>
+
+<!-- LISTS -->
+<h3>Services</h3>
+<ul>
+<li>Design</li>
+<li>Development</li>
+<li>Marketing</li>
+</ul>
+
+<h3>Steps</h3>
+<ol>
+<li>Post Job</li>
+<li>Hire Freelancer</li>
+<li>Get Results</li>
+</ol>
+
+<!-- NUMBER TO WORDS -->
+<h3>Number to Words</h3>
+<input type="text" id="num" placeholder="Enter 0-999">
+<button onclick="convert()">Convert</button>
+<p id="result"></p>
+
+<!-- MOUSE EVENTS -->
+<h3>Mouse Event Demo</h3>
+<div 
+onmouseover="changeColor(this)" 
+onmouseout="resetColor(this)" 
+onclick="alert('Element Clicked!')"
+style="padding:20px; background:#38443f; width:200px; text-align:center; cursor:pointer;">
+Hover & Click Me
+</div>
+
+</body>
+</html>
