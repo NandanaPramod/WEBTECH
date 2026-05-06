@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Freelance Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* additional internal CSS for register page */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .full-width {
+      grid-column: span 2;
+    }
+    .radio-group {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: normal;
+    }
+    @media (max-width: 700px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .full-width {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">FREELANCE<span>HUB</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="data.html">Live Feed</a></li>
+        <li><a href="embed.html">Media Hub</a></li>
+        <li><a href="map.html">Service Map</a></li>
+        <li><a href="frames_demo.html">Frames</a></li>
+        <li><a href="mouse_events.html">Mouse Events</a></li>
+        <li><a href="number_words.html">Num2Words</a></li>
+        <li><a href="employee.html">Employee DB</a></li>
+        <li><a href="top_talent.html" class="btn-accent">⭐ Top Talent</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2>✨ Become a Freelancer or Client</h2>
+    <p style="margin-bottom: 1.5rem;">Join our network of top professionals and innovative clients.</p>
+
+    <form id="registerForm" onsubmit="return validateRegistration()">
+      <div class="form-grid">
+        <div class="form-group full-width">
+          <label>Full Name *</label>
+          <input type="text" id="fullname" placeholder="e.g., John Doe (min 6 letters)" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" id="regEmail" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>Password *</label>
+          <input type="password" id="regPassword" placeholder="min 6 characters" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone *</label>
+          <input type="tel" id="phone" placeholder="10 digits" required>
+        </div>
+
+        <div class="form-group">
+          <label>Gender *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Service Category *</label>
+          <select id="serviceCat" required>
+            <option value="">-- Select --</option>
+            <option>Web Development</option>
+            <option>UI/UX Design</option>
+            <option>AI / ML Consulting</option>
+            <option>Mobile Apps</option>
+            <option>DevOps & Cloud</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Address / Bio *</label>
+          <textarea id="address" rows="3" placeholder="Your location or short bio" required></textarea>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+        <button type="submit" class="btn-primary">Create Account</button>
+        <button type="reset" class="btn-secondary" style="background:#38443f;">Reset</button>
+      </div>
+    </form>
+
+    <p style="text-align: center; margin-top: 1.5rem;">Already have an account? <a href="login.html">Login here</a></p>
+  </main>
+
+  <script>
+    function validateRegistration() {
+      const name = document.getElementById('fullname').value.trim();
+      const nameRegex = /^[A-Za-z\s]{6,}$/;
+      if (!nameRegex.test(name)) {
+        alert("❌ Name must contain only alphabets and at least 6 characters.");
+        return false;
+      }
+
+      const pwd = document.getElementById('regPassword').value;
+      if (pwd.length < 6) {
+        alert("❌ Password must be at least 6 characters long.");
+        return false;
+      }
+
+      const email = document.getElementById('regEmail').value.trim();
+      const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("❌ Enter a valid email address (e.g., name@domain.com).");
+        return false;
+      }
+
+      const phone = document.getElementById('phone').value.trim();
+      const phoneRegex = /^\d{10}$/;
+      if (!phoneRegex.test(phone)) {
+        alert("❌ Phone number must be exactly 10 digits (numbers only).");
+        return false;
+      }
+
+      const genderSelected = document.querySelector('input[name="gender"]:checked');
+      if (!genderSelected) {
+        alert("❌ Please select your gender.");
+        return false;
+      }
+
+      const serviceCat = document.getElementById('serviceCat').value;
+      if (serviceCat === "") {
+        alert("❌ Please select a service category.");
+        return false;
+      }
+
+      const address = document.getElementById('address').value.trim();
+      if (address === "") {
+        alert("❌ Address/Bio cannot be empty.");
+        return false;
+      }
+
+      alert("✅ Registration successful! Welcome to FreelanceHub.");
+      return true;
+    }
+  </script>
+</body>
+</html>

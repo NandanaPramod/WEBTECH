@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frames Demo | Freelance Platform</title>
+  <style>
+    /* Remove all borders and spacing for a seamless look */
+    frameset {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+    frame {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      margin: 0;
+      background: #151a1a;
+    }
+  </style>
+</head>
+<!-- 
+  Top frame: 80px banner
+  Left navigation: 260px
+  Right content: fills remaining space
+-->
+<frameset rows="80,*" frameborder="0" framespacing="0" border="0">
+  <frame src="frame_top.html" name="topFrame" scrolling="no" noresize>
+  <frameset cols="260,*" frameborder="0" framespacing="0" border="0">
+    <frame src="frame_nav.html" name="navFrame" noresize>
+    <frame src="frame_welcome.html" name="mainFrame">
+  </frameset>
+</frameset>
+</html>

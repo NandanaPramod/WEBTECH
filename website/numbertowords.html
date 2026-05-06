@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number to Words</title>
+
+<script>
+function convert(){
+
+    var num = document.getElementById("num").value;
+
+    if(!/^[0-9]+$/.test(num)){
+        alert("Enter digits only");
+        return;
+    }
+
+    if(num.length > 3){
+        alert("Only 0–999 allowed");
+        return;
+    }
+
+    var ones = ["","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"];
+    var teens = ["Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"];
+    var tens = ["","","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"];
+
+    num = parseInt(num);
+
+    if(num == 0){
+        document.getElementById("result").innerHTML = "Zero";
+        return;
+    }
+
+    var word = "";
+
+    if(num >= 100){
+        word += ones[Math.floor(num/100)] + " Hundred ";
+        num %= 100;
+    }
+
+    if(num >= 10 && num <= 19){
+        word += teens[num-10];
+    }
+    else if(num >= 20){
+        word += tens[Math.floor(num/10)] + " ";
+        num %= 10;
+    }
+
+    if(num > 0 && num < 10){
+        word += ones[num];
+    }
+
+    document.getElementById("result").innerHTML = word;
+}
+</script>
+
+</head>
+
+<body style="text-align:center; background:#f4ebd0;">
+
+<h2>Number to Words</h2>
+
+<input type="text" id="num">
+<button onclick="convert()">Convert</button>
+
+<h3 id="result"></h3>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animation</title>
+
+<style>
+body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f4ebd0;
+    font-family:Arial;
+}
+
+.card {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+    animation: slideIn 2s ease;
+}
+
+h2 {
+    animation: glow 2s infinite alternate;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity:0;
+    }
+    to {
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+
+@keyframes glow {
+    from {
+        color:#122620;
+    }
+    to {
+        color:#d6ad60;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Freelance Hub</h2>
+    <p>Animated Card Example</p>
+</div>
+
+</body>
+</html>

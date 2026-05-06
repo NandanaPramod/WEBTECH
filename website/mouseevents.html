@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mouse Events</title>
+
+<script>
+
+function mouseOver() {
+    var box = document.getElementById("box");
+    box.style.background = "#122620";
+    box.style.color = "white";
+    document.getElementById("msg").innerHTML = "Mouse Over";
+}
+
+function mouseOut() {
+    var box = document.getElementById("box");
+    box.style.background = "#b68d40";
+    box.style.color = "black";
+    document.getElementById("msg").innerHTML = "Mouse Out";
+}
+
+function mouseClick() {
+    document.getElementById("msg").innerHTML = "Mouse Clicked";
+}
+
+</script>
+
+<style>
+#box {
+    width:200px;
+    padding:20px;
+    background:#b68d40;
+    text-align:center;
+    margin:50px auto;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Mouse Events Demo</h2>
+
+<div id="box"
+     onmouseover="mouseOver()"
+     onmouseout="mouseOut()"
+     onclick="mouseClick()">
+    Hover / Click Me
+</div>
+
+<p id="msg" style="text-align:center;"></p>
+
+</body>
+</html>
